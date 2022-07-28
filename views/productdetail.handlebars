@@ -1,0 +1,48 @@
+<h1 class="text-center mt-5">Product Detal</h1>
+<br />
+{{#each product}}
+  <div class="container px-4 px-lg-5 pb-5 mb-5">
+    <div class="row gx-4 gx-lg-5 align-items-center bg-light">
+      <div class="col-md-6 border p-3">
+        <div class="mb-3 text-right">
+          <span class="bg-success py-1 px-2 text-white">
+            {{this.discount}}% OFF
+          </span>
+        </div>
+        <img
+          class="mb-5 mb-md-0 img-fluid"
+          src={{this.img}}
+          alt={{this.name}}
+        />
+      </div>
+      <div class="col-md-6">
+        <h1 class="">{{this.name}}</h1>
+        <div class="mb-5">
+          <span
+            style="text-decoration: line-through; color: red; font-size: 15px;"
+          >
+            ${{this.pricecut}}
+          </span>
+          <span class="ml-2" style="font-size: 18px">
+            ${{this.price}}
+          </span>
+          <span>
+            <div class="d-flex small text-warning" style="list-style: none">
+              <Stars num="{this.stars}" />
+            </div>
+          </span>
+        </div>
+        <p class="lead">{{this.description}}</p>
+        <div>
+          <label class="border px-2 py-1">
+            <b>Stock:</b>
+            <span class="text-dark">{{this.quantity}}</span>
+          </label>
+        </div>
+        <button class="btn btn-outline-dark mt-4" type="button">
+          Add to cart
+        </button>
+      </div>
+    </div>
+  </div>
+{{/each}}
